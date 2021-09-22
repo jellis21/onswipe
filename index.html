@@ -42,22 +42,22 @@
     </form>
     <div>
       <nav>
-      <ul>
-        <li>Go to Favorites</li>
-        <li>Return to Search</li>
+      <ul class='nav-ul'> <!-- Added class so that it doesn't conflict with other <ul>s below -->
+        <li class="nav-li">Go to Favorites</li> <!-- Added class so that it doesn't conflict with other <li>s below -->
+        <li class="nav-li">Return to Search</li>
       </ul>
       </nav>
     </div>
     </div>
-  </section>
-
+    
+    
     <div class="row">
       <div class="col-12 results">
         <!-- MOVIES SHOW UP HERE! -->
         <div id="movies-container" class="row"></div>
       </div>
     </div>
-
+    
     <!-- Contact Info section (added by Josh) -->
     <div class="row">
       <div class="col-12 col-md-6">
@@ -65,18 +65,19 @@
         <ul class="list-unstyled">
           <li><strong>Main Location:</strong> 3423 Piedmont Road NE, Atlanta, GA
             30305</li>
-          <li>
-            <strong>Email: </strong>
-            <a
+            <li>
+              <strong>Email: </strong>
+              <a
               href="mailto: joshua.ellis.r@gmail.com">joshua.ellis.r@gmail.com</a>,
-            <a href="mailto: #">Lakeysha's Email Here</a>,
-            <a href="mailto: #">Max's Email Here</a>
-          </li>
-        </ul>
+              <a href="mailto: #">Lakeysha's Email Here</a>,
+              <a href="mailto: #">Max's Email Here</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6" id='map' style='width: 200px; height: 200px;'></div>
       </div>
-      <div class="col-12 col-md-6" id='map' style='width: 200px; height: 200px;'></div>
-    </div>
-
+      
+      </section>
 
 
   <!-- Mapbox scripts -->
@@ -95,6 +96,7 @@
       crossorigin="anonymous"></script>
 
       <script src="./main.js"></script>
+
 </body>
 
 </html>
