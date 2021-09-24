@@ -17,11 +17,6 @@
 <body>
   <section>
     <div class="container">
-<<<<<<< Updated upstream
-      <div class="row">
-        <div class="col-12 header text-center">
-          <img class="logo" src="./OnSwipeLogo.png" />
-=======
         <div class="row">
           <div class="col-12 header text-center">
             <h2 class="display-2">onSwipe</h2>
@@ -50,7 +45,6 @@
             <div class="jobcards-container"></div>
 
           </div>
->>>>>>> Stashed changes
         </div>
       </div>
     <!-- Search Navigation (added by Josh) -->
@@ -73,22 +67,22 @@
     </form>
     <div>
       <nav>
-      <ul>
-        <li>Go to Favorites</li>
-        <li>Return to Search</li>
+      <ul class='nav-ul'> <!-- Added class so that it doesn't conflict with other <ul>s below -->
+        <li class="nav-li">Go to Favorites</li> <!-- Added class so that it doesn't conflict with other <li>s below -->
+        <li class="nav-li">Return to Search</li>
       </ul>
       </nav>
     </div>
     </div>
-  </section>
-
+    
+    
     <div class="row">
       <div class="col-12 results">
-        <!-- MOVIES SHOW UP HERE! -->
-        <div id="movies-container" class="row"></div>
+        <!-- JOBS SHOW UP HERE! -->
+        <div id="jobs-container" class="row"></div>
       </div>
     </div>
-
+    
     <!-- Contact Info section (added by Josh) -->
     <div class="row">
       <div class="col-12 col-md-6">
@@ -96,18 +90,19 @@
         <ul class="list-unstyled">
           <li><strong>Main Location:</strong> 3423 Piedmont Road NE, Atlanta, GA
             30305</li>
-          <li>
-            <strong>Email: </strong>
-            <a
+            <li>
+              <strong>Email: </strong>
+              <a
               href="mailto: joshua.ellis.r@gmail.com">joshua.ellis.r@gmail.com</a>,
-            <a href="mailto: #">Lakeysha's Email Here</a>,
-            <a href="mailto: #">Max's Email Here</a>
-          </li>
-        </ul>
+              <a href="mailto: #">Lakeysha's Email Here</a>,
+              <a href="mailto: #">Max's Email Here</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6" id='map' style='width: 200px; height: 200px;'></div>
       </div>
-      <div class="col-12 col-md-6" id='map' style='width: 200px; height: 200px;'></div>
-    </div>
-
+      
+      </section>
 
 
   <!-- Mapbox scripts -->
@@ -124,6 +119,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"></script>
+
+      <script src="./main.js"></script>
+
 </body>
 
 </html>

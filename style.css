@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-section {
+body {
     width: 100%;
     height: 100vh;
     background: linear-gradient(-45deg, #23d5ab, #00ffa0, #23A6D5);
@@ -20,13 +20,13 @@ section {
 
 }
 
-ul {
+.nav-ul { /* changed from "ul" to ".nav-ul" to prevent conflicts with other <ul>s on index.html */
     display: flex;
     align-items: space-around;
     list-style-type: none;
 }
 
-li {
+.nav-li { /* changed from "li" to ".nav-li" to prevent conflicts with other <li>s on index.html */
     display: flex;
     align-content: space-around;
 }
