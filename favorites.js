@@ -1,63 +1,44 @@
-document.addEventListener('DOMContentLoaded', function () {
 
-    let favlistJSON = localStorage.getItem('favlist');
-    console.log(favlistJSON);
-  
-    let favlist = JSON.parse(favlistJSON);
-    console.log(favlist);
-  
-    const jobcardsContainer = document.querySelector('.jobcards-container');
-  
-    jobcardsContainer.innerHTML = renderJobs(favlist)
-  
-    // Event listener to clear the favlist  
-    const clearFavlist = document.getElementById('clear-favlist');
-  
-    clearWatchlist.addEventListener('click', () => {
-      localStorage.clear();
-      jobcardsContainer.innerHTML = '<div></div>'
-      const container = document.getElementById('container');
-      const newDiv = document.createElement('div');
-      newDiv.classList = 'row'
-      newDiv.innerHTML = `<div class="col-12 header mt-4 text-center">
-        <p><strong>You need to add some jobs!</strong></p>
-      </div>`
-      container.append(newDiv);
-    })
-  
-  })
-  
-  
-  
-  function renderJobs(jobArray) {
-  
-    // "If" statement for if there's nothing in the favlist
-    if (movieArray == null) {
-      const container = document.getElementById('container');
-      const newDiv = document.createElement('div');
-      newDiv.classList = 'row'
-      newDiv.innerHTML = `<div class="col-12 header mt-4 text-center">
-        <p><strong>You need to add some movies!</strong></p>
-      </div>`
-      container.append(newDiv);
-    }
-
-    // job cards need work based off of api categorys
-    const jobHtmlArray = movieArray.map(function (currentJobcard) {
-      return `<div class="job col p-3">
-  <div class="card bg-secondary text-light" style="width: 18rem;">
-  <img src=${currentJobcard.Logo} class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">${currentJobcard.Title}</h5>
-    <p class="card-text">${currentJobcard.Year}</p>
-    <a href="#" class="add-button btn btn-warning text" data-imdbid=${currentJobcard.imdbID}>Add to favlist</a>
-  </div>
-  </div>
-  </div>`
-
-/*still need 2 buttons - Lp html forms for button types -
-need add to favlist and location button
+let favlistJSON = localStorage.getItem('yourJobs');
+let favlist = JSON.parse(favlistJSON);
+// parse JSON is turning it into an object or an array
+// when you use local storage it can only store a string - takes string and turns into array
+if (!favlist) {
+    favlist = []
+}
+// if there is not anything in the fav list make sure it is an array so favHTML does not fail
+/* 
 */
-    })
-    return jobHtmlArray.join(''); //Why do we need this? Because HTML can only read strings, and the above is JS. So you need the .join('') to convert to a string.
-  }
+document.querySelector('.jobs-container').innerHTML = renderJobs(favlist);
+/* jobs-container is a div where our selected jobs will show up,
+renderJobs passing in fav-list returns a string, innerHTML needs a string to render HTML,
+
+*/
+
+function renderJobs(jobs){
+    const html = jobs.map(function(job) {
+        // job is our object, it is iterating over an array and it is rendering the data from the keys that belong on the object
+         return `
+            <div>
+                <h2>${job.company}</h2>
+                <p>${job.position}</p>
+                <p>${job.level}</p>
+                <p>${job.description}</p>
+            <div>
+        `
+     });
+    
+     return html.join('');
+     /* converts array into a string, .innerHTML has to be a string,
+      that is why we convert the array of objects to a string*/
+ }
+
+
+// function removeMovie(imdbID) {
+//     console.log(watchlist, imdbID)
+//     let results = watchlist.filter(movie => movie.imdbID !== imdbID)
+//     watchlist = results
+//     document.querySelector('.movies-container').innerHTML = renderMovies(results);
+//     watchlistJSON = JSON.stringify(results);
+//     localStorage.setItem('watchlist', watchlistJSON);
+// }
