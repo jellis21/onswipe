@@ -1,65 +1,66 @@
 const searchButton = document.getElementById('search-button');
-const jobsContainer = document.getElementById('movies-container');
+const jobsContainer = document.getElementById('jobs-container');
+let currentIndex = 0;
+let rejectedJobs = [];
+let savedJobs = [];
 
 searchButton.addEventListener('click', (e) => {
   e.preventDefault();
   const selectJob = document.getElementById('select-job').value;
   const location = document.getElementById('location').value;
-
   const selectJobEncoded = encodeURIComponent(selectJob);
   const locationEncoded = encodeURIComponent(location);
 
   fetch(`https://www.themuse.com/api/public/jobs?category=${selectJobEncoded}&location=${locationEncoded}&page=1`)
     .then((response) => { return response.json() })
     .then((data) => {
-      console.log(selectJobEncoded);
-      console.log(locationEncoded);
       console.log(data);
-      const jobs = renderJobs(data.results);
+      myData = data.results;
+      const jobs = renderJob();
       jobsContainer.innerHTML = jobs;
-
-      // **Test** Makes it so only one job card shows
-      const singleJob = document.getElementsByClassName('movieJob');
-      console.log(singleJob);
-      function showOneJob() {
-      for (let i = 1; i < singleJob.length; i++) {
-        singleJob.item(i).classList.add('d-none');
-      }
-    }
-    showOneJob();
+      currentIndex += 1;
+      swipeLeft();
+      swipeRight();
     })
 })
 
-// **Test** This is a placeholder for Max's movie card and function
-function renderJobs(jobArray) {
-  const jobHtmlArray = jobArray.map(function (currentJob) {
-    return `<div class="movieJob col p-3">
-<div class="card bg-secondary text-light" style="width: 18rem;">
-<div class="card-body">
-  <h5 class="card-title">${currentJob.company.name}</h5>
-  <p class="card-text">${currentJob.name}</p>
-  <a href="#" class="add-button btn btn-warning text job-card">Test</a>
-</div>
-</div>
-</div>`
+function renderJob() {
+  return `<div class="jobs col-12 p-3 d-flex flex-column align-items-center">
+  <div class="card bg-info text-white" style="width: 18rem; height: 25rem;">
+  <div class="card-body text-center">
+  <h5 class="card-title">${myData[currentIndex].company.name}</h5>
+  <p class="card-text">${myData[currentIndex].name}</p>
+  <p class="card-text">Job Level: ${myData[currentIndex].levels[0].name}</p>
+  <a href="#" class="add-button btn btn-primary text job-card" id="left">Swipe Left</a>
+  <a href="#" class="add-button btn btn-primary text job-card" id="right">Swipe Right</a>
+  </div>
+  </div>
+  </div>`
+};
+
+function swipeLeft() {
+  const left = document.getElementById('left');
+  left.addEventListener('click', (e) => {
+    e.preventDefault();
+    rejectedJobs.push(jobsContainer.innerHTML);
+    const jobs = renderJob();
+    jobsContainer.innerHTML = jobs;
+    currentIndex += 1;
+    swipeLeft();
+    swipeRight();
   })
-  return jobHtmlArray.join('');
 }
 
-// **Test** Need to keep working on this
-jobsContainer.addEventListener('click', (e) => {
-  e.preventDefault();
-  const jobCard = document.getElementsByClassName('job-card');
-  nextJob(singleJob, 0);
-
-})
-function nextJob(arr, index) {
-  // index n disappears
-  // index m appears
-  arr.item(index).classList.add('d-none');
-  arr.item(index + 1).classList.remove('d-none');
+function swipeRight() {
+  const right = document.getElementById('right');
+  right.addEventListener('click', (e) => {
+    e.preventDefault();
+    savedJobs.push(jobsContainer.innerHTML);
+    const jobs = renderJob();
+    jobsContainer.innerHTML = jobs;
+    currentIndex += 1;
+    swipeLeft();
+    swipeRight();
+  })
 }
-
-
-
 
