@@ -18,7 +18,6 @@ searchButton.addEventListener('click', (e) => {
       myData = data.results;
       const jobs = renderJob();
       jobsContainer.innerHTML = jobs;
-      currentIndex += 1;
       swipeLeft();
       swipeRight();
     })
@@ -44,9 +43,9 @@ function swipeLeft() {
     e.preventDefault();
     const job = formatJobData(myData[currentIndex]);
     rejectedJobs.push(job);
+    currentIndex += 1;
     const jobs = renderJob();
     jobsContainer.innerHTML = jobs;
-    currentIndex += 1;
     swipeLeft();
     swipeRight();
     console.log(rejectedJobs);
@@ -59,9 +58,9 @@ function swipeRight() {
     e.preventDefault();
     const job = formatJobData(myData[currentIndex]);
     savedJobs.push(job);
+    currentIndex += 1;
     const jobs = renderJob();
     jobsContainer.innerHTML = jobs;
-    currentIndex += 1;
     swipeLeft();
     swipeRight();
     console.log(savedJobs);
