@@ -42,3 +42,13 @@ function renderJobs(jobs){
 //     watchlistJSON = JSON.stringify(results);
 //     localStorage.setItem('watchlist', watchlistJSON);
 // }
+
+const clearFavlist = document.getElementById('clear-favlist');
+clearFavlist.addEventListener('click', (e) => {
+  e.preventDefault();
+  localStorage.clear();
+  document.querySelector('.jobs-container').innerHTML = 
+  `<div class='d-flex mx-auto mt-5'>
+  <p>Add some jobs!</p>
+  </div>`
+})
