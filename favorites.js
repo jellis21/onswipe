@@ -19,11 +19,10 @@ function renderJobs(jobs){
     const html = jobs.map(function(job) {
         // job is our object, it is iterating over an array and it is rendering the data from the keys that belong on the object
          return `
-            <div>
+            <div class='d-flex flex-column mx-auto'> 
                 <h2>${job.company}</h2>
-                <p>${job.position}</p>
-                <p>${job.level}</p>
-                <p>${job.description}</p>
+                <p>Job Title: ${job.position}</p>
+                <p>Job Level: ${job.level}</p>
             <div>
         `
      });
@@ -42,3 +41,13 @@ function renderJobs(jobs){
 //     watchlistJSON = JSON.stringify(results);
 //     localStorage.setItem('watchlist', watchlistJSON);
 // }
+
+const clearFavlist = document.getElementById('clear-favlist');
+clearFavlist.addEventListener('click', (e) => {
+  e.preventDefault();
+  localStorage.clear();
+  document.querySelector('.jobs-container').innerHTML = 
+  `<div class='d-flex mx-auto mt-5'>
+  <p>Add some jobs!</p>
+  </div>`
+})

@@ -18,7 +18,6 @@ searchButton.addEventListener('click', (e) => {
       myData = data.results;
       const jobs = renderJob();
       jobsContainer.innerHTML = jobs;
-      currentIndex += 1;
       swipeLeft();
       swipeRight();
     })
@@ -42,12 +41,14 @@ function swipeLeft() {
   const left = document.getElementById('left');
   left.addEventListener('click', (e) => {
     e.preventDefault();
-    rejectedJobs.push(jobsContainer.innerHTML);
+    const job = formatJobData(myData[currentIndex]);
+    rejectedJobs.push(job);
+    currentIndex += 1;
     const jobs = renderJob();
     jobsContainer.innerHTML = jobs;
-    currentIndex += 1;
     swipeLeft();
     swipeRight();
+    console.log(rejectedJobs);
   })
 }
 
@@ -55,12 +56,27 @@ function swipeRight() {
   const right = document.getElementById('right');
   right.addEventListener('click', (e) => {
     e.preventDefault();
-    savedJobs.push(jobsContainer.innerHTML);
+    const job = formatJobData(myData[currentIndex]);
+    savedJobs.push(job);
+    currentIndex += 1;
     const jobs = renderJob();
     jobsContainer.innerHTML = jobs;
-    currentIndex += 1;
     swipeLeft();
     swipeRight();
+    console.log(savedJobs);
+    saveToFavorites(savedJobs);
   })
 }
 
+function formatJobData(job) {
+  return {
+    company: job.company.name,
+    description: job.contents,
+    level: job.levels[0].name,
+    position: job.name
+  }
+}
+
+function saveToFavorites(jobs) {
+  localStorage.setItem('yourJobs', JSON.stringify(jobs));
+}
