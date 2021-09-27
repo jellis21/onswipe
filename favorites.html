@@ -3,31 +3,33 @@
 <html lang="en">
 
 <head>
-    <title>Favorites</title>
+    <title>OnSwipe Careers - Favorites</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
     <link rel="stylesheet" href="favorites.css" />
 </head>
 
 <body >
+  <div class="logo-container">
+    <img class="logo" src="OnSwipeLogo.png">
+  </div>
     <div class="container" id="container">
         <div class="row">
-          <div class="col-12 header text-center">
-            <h2 class="display-2">Job Favoritelist</h2>
-            <p>Save jobcards to your list</p>
+          <div class="col-12 header text-left">
+            <h3 class="display-2">Saved Jobs</h2>
           </div>
         </div>
-        <div class="d-flex justify-content-center">
-          <a href="index.html" class="add-button btn btn-warning mr-4">Home</a>
+        <div class="d-flex justify-content-left">
+          <a href="index.html" class="add-button btn btn-warning mr-4">Return to Search</a>
           <button type="button" class="btn btn-warning" id="clear-favlist">Clear Favlist</button>
         </div>
-    
+       
     
     <div class="row">
         <div class="col-12 results">
             <!-- Favorites SHOW UP HERE! -->
-            <div class="jobs-container row">
-            </div>
+            <ul id="jobs-list" class="jobs-container row">
+            </ul>
         </div>
     </div>
     </div>
@@ -47,6 +49,9 @@
   <script src="data.js"></script>
   <!-- <script src="script.js"></script>  -->
   <script src="favorites.js"></script>
+
+  <div class="push"></div>
+  </div>
 </body>
-    
+
 </html>

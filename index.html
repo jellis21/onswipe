@@ -2,34 +2,34 @@
 <html lang="en">
 
 <head>
-  <title>Document</title>
-  <link rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous" />
-  <!-- Mapbox stylesheet -->
-  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css'
-    rel='stylesheet' />
-
+  <title>OnSwipe Careers</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+  <!--Main stylesheet-->
   <link rel="stylesheet" href="style.css" />
+  <!-- Mapbox stylesheet -->
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+
+
 </head>
 
 <body>
-  <section>
-    <div class="container">
-        <div class="row">
-          <div class="col-12 header text-center">
-            <h2 class="display-2">onSwipe</h2>
-            <p>Tinder for Tech Jobs</p>
-            <a href="favorites.html">Favorite List</a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12 results">
-            <!-- Job-Cards Show Up Here! -->
-            <div class="jobcards-container"></div>
+  <div class="wrapper">
 
-          </div>
+  <header>
+    <div class="container1">
+      <button type="button" class="btn btn-outline-danger" ><a href="./favorites.html">Favorites</a></button>
+    </div>
+    <div class="logo-container">
+      <img class="logo" src="OnSwipeLogo.png">
+    </div>
+  </header>
+  <section>
+      <div class="row">
+        <div class="col-12 results">
+          <!-- Job-Cards Show Up Here! -->
+          <div class="jobcards-container"></div>
+          <!-- Place a default card here so that the page is not blank upon load-->
         </div>
       </div>
       <!-- Search Navigation (added by Josh) -->
@@ -59,7 +59,10 @@
         <div id="jobs-container" class="row"></div>
       </div>
     </div>
+  
+  </section>
 
+  <footer class="footer">
     <!-- Contact Info section (added by Josh) -->
     <div class="row">
       <div class="col-12 col-md-6">
@@ -69,23 +72,18 @@
             30305</li>
           <li>
             <strong>Email: </strong>
-            <a
-              href="mailto: joshua.ellis.r@gmail.com">joshua.ellis.r@gmail.com</a>,
-            <a href="mailto: #">Lakeysha's Email Here</a>,
-            <a href="mailto: #">Max's Email Here</a>
+            <a class ="email" href="mailto: joshua.ellis.r@gmail.com">joshua.ellis.r@gmail.com</a>,
+            <a  class ="email" href="mailto: lakeysha.vadams@gmail.com">LaKeysha Adams</a>,
+            <a class = "email" href="mailto: #">Max's Email Here</a>
           </li>
         </ul>
       </div>
-      <div class="col-12 col-md-6" id='map'
-        style='width: 200px; height: 200px;'></div>
+      <div class="col-12 col-md-6" id='map' style='width: 200px; height: 200px;'></div>
     </div>
+</footer>
 
-  </section>
 
-
-  <!-- Mapbox scripts -->
-  <script
-    src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
   <script src="./mapbox.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -103,5 +101,6 @@
   <script src="./main.js"></script>
 
 </body>
+
 
 </html>
