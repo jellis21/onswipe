@@ -46,6 +46,14 @@ body {
     position: relative;
 } 
 
+li {
+    color: white;
+}
+
+.text-center, .email {
+    color: #fff2d7;
+}
+
 
 
 
