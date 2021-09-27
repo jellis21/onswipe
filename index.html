@@ -25,21 +25,6 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12 search">
-            <form id="search-form">
-              <div class="input-group input-group-lg">
-                <input
-                  class="form-control search-bar"
-                  placeholder="Search for Tech Job..."
-                />
-                <button class="btn btn-primary input-group-btn" type="submit">
-                  Search
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="row">
           <div class="col-12 results">
             <!-- Job-Cards Show Up Here! -->
             <div class="jobcards-container"></div>
@@ -47,42 +32,34 @@
           </div>
         </div>
       </div>
-    <!-- Search Navigation (added by Josh) -->
-    <form class="form-row">
-      <div class="form-group col-12 col-md-5 mb-md-0">
-        <select name="" id="select-job" class="custom-select">
-          <option selected disabled>Job</option>
-          <option value="Data Science">Data Science</option>
-          <option value="IT">IT</option>
-          <option value="Software Engineer">Software Engineer</option>
-          <option value="UX">UX</option>
-        </select>
-      </div>
-      <div class="form-group col-12 col-md-5 mb-md-0">
-        <input type="text" class="form-control" id="location"
-          placeholder="Location (e.g. Atlanta, GA)">
-      </div>
-      <button class="btn btn-primary col-12 col-md-2"
-        id="search-button">Search</button>
-    </form>
-    <div>
-      <nav>
-      <ul class='nav-ul'> <!-- Added class so that it doesn't conflict with other <ul>s below -->
-        <li class="nav-li">Go to Favorites</li> <!-- Added class so that it doesn't conflict with other <li>s below -->
-        <li class="nav-li">Return to Search</li>
-      </ul>
-      </nav>
+      <!-- Search Navigation (added by Josh) -->
+      <form class="form-row">
+        <div class="form-group col-12 col-md-5 mb-md-0">
+          <select name="" id="select-job" class="custom-select">
+            <option selected disabled>Job</option>
+            <option value="Data Science">Data Science</option>
+            <option value="IT">IT</option>
+            <option value="Software Engineer">Software Engineer</option>
+            <option value="UX">UX</option>
+          </select>
+        </div>
+        <div class="form-group col-12 col-md-5 mb-md-0">
+          <input type="text" class="form-control" id="location"
+            placeholder="Location (e.g. Atlanta, GA)">
+        </div>
+        <button class="btn btn-primary col-12 col-md-2 mb-3"
+          id="search-button">Search</button>
+      </form>
     </div>
-    </div>
-    
-    
+
+
     <div class="row">
       <div class="col-12 results">
         <!-- JOBS SHOW UP HERE! -->
         <div id="jobs-container" class="row"></div>
       </div>
     </div>
-    
+
     <!-- Contact Info section (added by Josh) -->
     <div class="row">
       <div class="col-12 col-md-6">
@@ -90,19 +67,20 @@
         <ul class="list-unstyled">
           <li><strong>Main Location:</strong> 3423 Piedmont Road NE, Atlanta, GA
             30305</li>
-            <li>
-              <strong>Email: </strong>
-              <a
+          <li>
+            <strong>Email: </strong>
+            <a
               href="mailto: joshua.ellis.r@gmail.com">joshua.ellis.r@gmail.com</a>,
-              <a href="mailto: #">Lakeysha's Email Here</a>,
-              <a href="mailto: #">Max's Email Here</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-6" id='map' style='width: 200px; height: 200px;'></div>
+            <a href="mailto: #">lakeysha.vadams@gmail.com.</a>,
+            <a href="mailto: #">maxbb329@outlook.com</a>
+          </li>
+        </ul>
       </div>
-      
-      </section>
+      <div class="col-12 col-md-6" id='map'
+        style='width: 200px; height: 200px;'></div>
+    </div>
+
+  </section>
 
 
   <!-- Mapbox scripts -->
@@ -110,17 +88,19 @@
     src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
   <script src="./mapbox.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 
-      <script src="./main.js"></script>
+  <script src="./main.js"></script>
 
 </body>
 
