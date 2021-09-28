@@ -25,7 +25,8 @@ searchButton.addEventListener('click', (e) => {
 
 function renderJob() {
   return `<div class="jobs col-12 p-3 d-flex flex-column align-items-center">
-  <div class="card bg-info text-white" style="width: 18rem; height: 25rem;">
+  <div class="card bg-info text-white" style="width: 18rem; height: 26rem;">
+  <img class='mt-2 mx-auto' src='https://logo.clearbit.com/${myData[currentIndex].company.short_name}.com' onerror=this.src='./not-found-image.jpg' style='height: 150px; width: 150px; display: block;' />
   <div class="card-body text-center">
   <h5 class="card-title">${myData[currentIndex].company.name}</h5>
   <p class="card-text">${myData[currentIndex].name}</p>
