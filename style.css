@@ -42,12 +42,14 @@ button:hover {
     background-color: whitesmoke !important;
     border: none !important;
     color: whitesmoke !important;
+   display: flex;
+    align-items: center;
 }
 
 
 body {
     width: 100%;
-    background-color: #eee;
+    background-color: whitesmoke;
     background-size: 300% 300%;
     position: relative;
     margin: 0 0 100px;
@@ -73,17 +75,26 @@ html {
   height: 100%;
 }
 
- 
-
+ footer {
+     background-color: #81D8D0;
+ }
 
 #jobs-container {
   height: 27rem;
 }
 
+.card-body{
+    background-color: whitesmoke;
+}
 
+.card {
+    border-style: thick !important;  
+    background-color: whitesmoke;  
+}
 
-
-
+.mt-2, .mt-auto {
+    background-color: transparent !important;
+}
 
 
 
