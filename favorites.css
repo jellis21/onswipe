@@ -12,7 +12,7 @@
 body {
     width: 100%;
     height: 100vh;
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgb(1, 90, 92) 0.1%, rgb(3, 54, 43) 94.2% );    
+    background-color: eeece9;
     background-size: 300% 300%;
     position: relative;
 } 
@@ -23,14 +23,14 @@ button:hover {
 }
 
 .btn-primary, .btn-warning, button{
-    background-color: #F0DFBC !important;
+    background-color: #81D8D0!important;
     color: gray;
     border: gray;
 }
 
 .btn-warning:hover {
-    background-color: rgb(1, 90, 92)  !important;
-    color: whitesmoke;
+    background-color: whitesmoke !important;
+    color: gray;
    border: none;
 }
 
@@ -50,15 +50,17 @@ p{
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 60%; 
+    width: 80%; 
+    font-size: 12px;
 }
+
 
   
   .modal::after {
     background-color: black;
     content: '';
     height: 100%;
-    opacity: 0.8;
+    opacity: 0.9;
     position: absolute;
     width: 100%;
     z-index: -1;
@@ -84,13 +86,19 @@ p{
   
   .job-item {
     list-style-type: none;
-    border: 1px solid black;
+    border: 2px solid #81D8D0;
+    border-radius: 8px;
     width: 100%;
     margin: 16px 0px;
-    padding: 12px;
+    padding: 16px;
   }
 
   .job-item h2 {
     cursor: pointer;
+    text-decoration: underline;
   }
   
+  .card, .card-body{
+    background-color: none !important;
+    border-color: #81D8D0 !important;
+  }
