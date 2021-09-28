@@ -46,6 +46,7 @@ clearFavlist.addEventListener('click', (e) => {
 /*Modal placed here by Keysha*/
 
 const jobs = document.getElementById('jobs-list');
+const results = document.getElementById('results');
 jobs.addEventListener('click', openModal);
 
 function openModal(e) {
@@ -64,11 +65,13 @@ function renderDetail(description) {
 
 modal = document.createElement('div');
 modal.id = "modal";
-modal.className = 'modal';
-modal.innerHTML = `<span class='cancel' id='cancel')&times;</span>
-<p>${description}</p>`;
+modal.className = 'the-modal';
+modal.innerHTML = `
+    <div class="modal__container">
+      <p>${description}</p>
+    </div>`;
 
-jobs.append(modal);
+results.append(modal);
 renderCancelBtn(modal);
 }
 
