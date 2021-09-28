@@ -68,7 +68,9 @@ section {
   flex: 1;
 }
 
-
+#jobs-container {
+  height: 27rem;
+}
 
 
 
