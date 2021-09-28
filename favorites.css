@@ -6,7 +6,7 @@
     position: static;
 }
 .display-2 {
- color: whitesmoke;
+ color: gray;
 }
 
 body {
@@ -18,7 +18,7 @@ body {
 } 
 
 button:hover {
-    background-color:rgb(1, 90, 92) !important;
+    background-color: whitesmoke;
     border: none;
 }
 
@@ -46,6 +46,7 @@ p{
     height: 90%;
     justify-content: center;
     left: 50%;
+    overflow: hidden;
     padding: 0 50px;
     position: absolute;
     top: 50%;
@@ -54,7 +55,9 @@ p{
     font-size: 12px;
 }
 
-
+p.modal {
+  font-size: 24px !important;
+}
   
   .modal::after {
     background-color: black;
@@ -75,6 +78,10 @@ p{
     z-index: -2;
   }
   
+  .modal_container {
+    overflow: scroll;
+    padding: 20px 0;
+  }
   
   .cancel {
     cursor: pointer;

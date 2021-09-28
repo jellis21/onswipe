@@ -66,7 +66,10 @@ modal = document.createElement('div');
 modal.id = "modal";
 modal.className = 'modal';
 modal.innerHTML = `<span class='cancel' id='cancel')&times;</span>
-<p>${description}</p>`;
+<div class = "modal_container">
+<p>${description}</p> 
+</div>
+`;
 
 jobs.append(modal);
 renderCancelBtn(modal);
