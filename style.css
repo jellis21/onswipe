@@ -1,13 +1,4 @@
-/*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}*/
 
-header{
-    position: static;
-    width: 100%;
-}
 .container1 {
     display: flex;
     justify-content: flex-end;
@@ -51,12 +42,14 @@ button:hover {
     background-color: whitesmoke !important;
     border: none !important;
     color: whitesmoke !important;
+   display: flex;
+    align-items: center;
 }
 
 
 body {
     width: 100%;
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgb(1, 90, 92) 0.1%, rgb(3, 54, 43) 94.2% );    
+    background-color: whitesmoke;
     background-size: 300% 300%;
     position: relative;
     margin: 0 0 100px;
@@ -82,18 +75,26 @@ html {
   height: 100%;
 }
 
-section {
-  flex: 1;
-}
+ footer {
+     background-color: #81D8D0;
+ }
 
 #jobs-container {
   height: 27rem;
 }
 
+.card-body{
+    background-color: whitesmoke;
+}
 
+.card {
+    border-style: thick !important;  
+    background-color: whitesmoke;  
+}
 
-
-
+.mt-2, .mt-auto {
+    background-color: transparent !important;
+}
 
 
 
